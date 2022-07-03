@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h5 class="btn btn-light"><a href="{% url 'studentapp:add_student' %}">add details of students</a></h5>
+<div class="container">
+
+
+    <div class="row">
+
+
+       <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">NAME</th>
+      <th scope="col">Department</th>
+      <th scope="col">email</th>
+        <th scope="col">mobile</th>
+      <th scope="col">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in student_list %}
+    <tr>
+      <th scope="row">*</th>
+      <td><a href="{% url 'studentapp:detail' i.id %}">{{i.name}}</a></td>
+      <td>{{i.department}}</td>
+      <td>{{i.email}}</td>
+        <td>{{i.mobile}}</td>
+        <td>{{i.address}}</td>
+
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

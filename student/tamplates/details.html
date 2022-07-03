@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+
+     <h2>{{student.name}}</h2><br>
+        <h2>{{student.department}}</h2><br>
+
+    <a class="btn btn-warning" href="{% url 'studentapp:update' student.id %}">Update</a>
+    <a class="btn btn-danger" href="{% url 'studentapp:delete' student.id %}">Delete</a>
+</div>
+
+
+
+
+{% endblock %}
